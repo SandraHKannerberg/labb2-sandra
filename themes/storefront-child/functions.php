@@ -15,4 +15,11 @@ function my_remove_product_result_count() {
 
 add_action('after_setup_theme', 'my_remove_product_result_count', 99);
 
+//Tar bort Standardsorteringen längst ner på sidan
+function my_remove_catalog_ordering() {
+    remove_action('woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10);
+}
+
+add_action('after_setup_theme', 'my_remove_catalog_ordering', 99);
+
 ?>
