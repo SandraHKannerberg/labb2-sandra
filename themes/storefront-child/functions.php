@@ -21,7 +21,7 @@ add_action('after_setup_theme', 'my_remove_catalog_ordering', 99);
 
 //Denna funktion skriver ut erbjudande på e-handeln gällande från vilken summa det erbjuds fri frakt
 function free_shipping() {
-    echo '<div class="shipping-info">'."Fri frakt vid köp över 299 kr".'</div>';
+    echo '<div class="shipping-info">'. "Fri frakt vid köp över 299 kr". '</div>';
 }
 add_action('storefront_before_content', 'free_shipping', );
 
