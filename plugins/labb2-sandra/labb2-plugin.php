@@ -12,20 +12,22 @@ function labb2_css_button()
 
 		.button_container {
 			display: flex;
+			justify-content: flex-end;
 			gap: 1rem;
 			padding-top: 25px;
-			padding-left: 25px;
-			padding-bottom: 0px;
+			padding-right: 35px;
 		}
 		.labb2_button {
 			all: unset;
 			cursor: pointer;
+			font-size: 1.5rem;
 		}
 		.remove_labb2_button {
 			all: unset;
 			cursor: pointer;
+			font-size: 1.5rem;
 		}
-
+	
 	</style>
 	";
 }
@@ -38,6 +40,10 @@ function labb2_css()
 	echo "
 	<style type='text/css'>
 
+		.button_container {
+			background-color: rgb(41, 41, 41);
+			color: white;
+		}
 		#masthead {
 			background-color: rgb(41, 41, 41);
 		}	
@@ -50,14 +56,7 @@ function labb2_css()
 		a {
 			color: white;
 		}
-		.labb2_button {
-			border: 2px solid black;
-			border-radius: 50%;
-		}
-		.remove_labb2_button {
-			border: 2px solid black;
-			border-radius: 50%;
-		}
+
 
 	</style>
 	";
@@ -89,7 +88,7 @@ add_action('wp_head', 'labb2_css');
 <div class="button_container">
 	<form method="post">
 		<input type="hidden" name="labb2_button" value="1" />
-		<button type="submit" class="labb2_button"><i class="fa-regular fa-moon"></i></button>
+		<button type="submit" class="labb2_button"><i class="fa-solid fa-moon"></i></button>
 	</form>
 
 	<form method="post">
