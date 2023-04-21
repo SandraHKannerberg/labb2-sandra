@@ -25,4 +25,16 @@ function free_shipping() {
 }
 add_action('storefront_before_content', 'free_shipping', );
 
+add_action('init', 'registrera_meny');
+
+//Registrerar en undermeny i header
+function registrera_meny()
+    {
+        $menus = array(
+        'undermeny' => 'undermeny',
+        );
+        register_nav_menus($menus);
+    }
+
+
 ?>
