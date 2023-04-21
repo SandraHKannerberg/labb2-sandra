@@ -54,7 +54,7 @@
         'menu' => 'undermeny',
         'container' => '',
         'theme_location' => 'undermeny',
-        'items_wrap' => '<ul class="menu">%3$s</ul>'
+        'items_wrap' => '<ul class="menu2">%3$s</ul>'
     ));
     ?>
 
