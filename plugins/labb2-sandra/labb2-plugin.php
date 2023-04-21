@@ -17,7 +17,6 @@ function labb2_css_button()
 			padding-left: 25px;
 			padding-bottom: 0px;
 		}
-
 		.labb2_button {
 			all: unset;
 			cursor: pointer;
