@@ -27,6 +27,12 @@ function labb2_css_button()
 			cursor: pointer;
 			font-size: 1.5rem;
 		}
+		a.button.wp-element-button.product_type_variable.add_to_cart_button {
+			color: #43454b;
+		}
+		a.cart-contents::after {
+			color: orange;
+		}
 	
 	</style>
 	";
@@ -46,17 +52,43 @@ function labb2_css()
 		}
 		#masthead {
 			background-color: rgb(41, 41, 41);
+			color: white;
+		}
+		.main-navigation ul li a {
+			color: white;
 		}	
 		#page {
 			background-color: rgb(41, 41, 41);
+			color: white;
+		}
+		.woocommerce-Price-currencySymbol {
+			color: white;
+		}
+		.woocommerce-Price-amount {
+			color: white;
+		}
+		.count {
+			color: white;
+		}
+		a.cart-contents::after {
+			color: orange;
+		}
+		a.button.wp-element-button.product_type_variable.add_to_cart_button {
+			color: #43454b;
+		}
+		a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
+			color: #43454b;
+		}
+		button.single_add_to_cart_button.button.alt.wp-element-button.disabled.wc-variation-selection-needed {
+			background-color: orange;
 		}
 		#colophon {
 			background-color: rgb(41, 41, 41);
+			color: grey;
 		}
-		a {
+		h1, h2, h3, h4, h5, h6, span.price {
 			color: white;
 		}
-
 
 	</style>
 	";
@@ -88,12 +120,12 @@ add_action('wp_head', 'labb2_css');
 <div class="button_container">
 	<form method="post">
 		<input type="hidden" name="labb2_button" value="1" />
-		<button type="submit" class="labb2_button"><i class="fa-solid fa-moon"></i></button>
+		<button type="submit" class="labb2_button" onclick="event.stopPropagation();"><i class="fa-regular fa-moon"></i></button>
 	</form>
 
 	<form method="post">
 		<input type="hidden" name="remove_labb2_button" value="1" />
-		<button type="submit" class="remove_labb2_button"><i class="fa-solid fa-sun"></i></button>
+		<button type="submit" class="remove_labb2_button" onclick="event.stopPropagation();"><i class="fa-solid fa-sun"></i></button>
 	</form>
 </div>
 
