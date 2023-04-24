@@ -2,15 +2,21 @@
 
 /* 
 Plugin Name: Labb2 plugin
+Description: Plugin för att växla mellan ljust och mörkt färgtema
 */
 
+//Wrappar upp hela plugin:et så att det inte gäller i Adminpanelen
+//Det ska bara vara på själva websidan som det går att ändra färg
+if(!is_admin()) {
+
+//Sätter css för plugin knapparna som man ska använda för att skifta mellan färgtemat
 function labb2_css_button()
 
 {
 	echo "
 	<style type='text/css'>
 
-		.button_container {
+		.button_container_labb2 {
 			display: flex;
 			justify-content: flex-end;
 			gap: 1rem;
@@ -33,20 +39,23 @@ function labb2_css_button()
 		a.cart-contents::after {
 			color: orange;
 		}
+		a.checkout-button.button.alt.wc-forward.wp-element-button {
+			background-color: green;
+		}
 	
 	</style>
 	";
 }
 add_action('init', 'labb2_css_button');
 
-
+//Sätter inställningar för det mörka färgtemat
 function labb2_css()
 
 {
 	echo "
 	<style type='text/css'>
 
-		.button_container {
+		.button_container_labb2 {
 			background-color: rgb(41, 41, 41);
 			color: white;
 		}
@@ -79,9 +88,15 @@ function labb2_css()
 		a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
 			color: #43454b;
 		}
-		button.single_add_to_cart_button.button.alt.wp-element-button{
+		button.single_add_to_cart_button.button.alt.wp-element-button {
 			background-color: white;
 			color: #43454b;
+		}
+		a.checkout-button.button.alt.wc-forward.wp-element-button {
+			background-color: green;
+		}
+		shop_table.shop_table_responsive {
+			background-color: grey;
 		}
 		#colophon {
 			background-color: rgb(41, 41, 41);
@@ -118,10 +133,10 @@ add_action('wp_head', 'labb2_css');
 ?>
 
 <!--Skapar knappen som ska kunna byta färg på webbsidan -->
-<div class="button_container">
+<div class="button_container_labb2">
 	<form method="post">
 		<input type="hidden" name="labb2_button" value="1" />
-		<button type="submit" class="labb2_button" onclick="event.stopPropagation();"><i class="fa-regular fa-moon"></i></button>
+		<button type="submit" class="labb2_button" onclick="event.stopPropagation();"><i class="fa-solid fa-moon"></i></button>
 	</form>
 
 	<form method="post">
@@ -130,5 +145,6 @@ add_action('wp_head', 'labb2_css');
 	</form>
 </div>
 
+<?php } ?>
 
 <script src="https://kit.fontawesome.com/bce314e193.js" crossorigin="anonymous"></script>
