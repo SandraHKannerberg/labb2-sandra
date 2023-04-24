@@ -79,8 +79,9 @@ function labb2_css()
 		a.button.wp-element-button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
 			color: #43454b;
 		}
-		button.single_add_to_cart_button.button.alt.wp-element-button.disabled.wc-variation-selection-needed {
-			background-color: orange;
+		button.single_add_to_cart_button.button.alt.wp-element-button{
+			background-color: white;
+			color: #43454b;
 		}
 		#colophon {
 			background-color: rgb(41, 41, 41);
